@@ -1,0 +1,9 @@
+services:
+    emitter:
+        factory: League\Event\Emitter
+        setup:
+            - addListener('first-event', LeagueEventApp\Listener\ListenFirstEvent())
+            - addListener('LeagueEventApp\Event\FirstEvent', LeagueEventApp\Listener\ListenFirstEvent())
+            - addListener('second-event', LeagueEventApp\Listener\ListenSecondEvent())
+
+    - LeagueEventApp\Command\FirstCommand

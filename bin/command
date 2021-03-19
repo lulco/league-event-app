@@ -1,0 +1,14 @@
+#!/usr/bin/env php
+<?php
+
+use LeagueEventApp\Command\FirstCommand;
+use Nette\DI\Container;
+use Symfony\Component\Console\Application;
+
+/* @var $container Container */
+$container = require __DIR__ . '/../app/bootstrap.php';
+
+$application = new Application();
+$application->setCatchExceptions(false);
+$application->add($container->getByType(FirstCommand::class));
+$application->run();
