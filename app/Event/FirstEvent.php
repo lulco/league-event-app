@@ -2,7 +2,12 @@
 
 namespace LeagueEventApp\Event;
 
-class FirstEvent extends Event
-{
+use League\Event\AbstractEvent;
 
+class FirstEvent extends AbstractEvent
+{
+    public function getName()
+    {
+        return get_class($this);
+    }
 }
