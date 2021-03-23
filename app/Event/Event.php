@@ -2,9 +2,8 @@
 
 namespace LeagueEventApp\Event;
 
-use League\Event\AbstractEvent;
 
-class Event extends AbstractEvent
+class Event extends \League\Event\Event
 {
     protected $name;
 
